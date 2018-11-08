@@ -101,6 +101,10 @@ public class Main : MonoBehaviour {
             NameHandler.audioState = -1;
         }
     }
-
+    //返回上一场景
+    public void goLastScene()
+    {
+        Application.LoadLevel("Start");
+    }
 
 }
