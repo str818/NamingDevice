@@ -6,10 +6,9 @@ using UnityEngine;
 public class RunSplash : MonoBehaviour {
     //exe文件所在的目录路径
     //  string path = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-    string path = "D:\\Files\\exe\\";
-    //闪屏的材质
-    public Material splash;
-    public Texture texture;
+    string path = "D:\\Files\\exe\\";//加载路径
+    public Material splash;//闪屏的材质
+    public Texture texture;//闪屏纹理图
 
     private void Awake() {
         StartCoroutine("LoadImg");
