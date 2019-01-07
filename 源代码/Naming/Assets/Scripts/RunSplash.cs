@@ -11,15 +11,14 @@ public class RunSplash : MonoBehaviour {
     public Texture texture;//闪屏纹理图
 
     private void Awake() {
-        StartCoroutine("LoadImg");
+        StartCoroutine("LoadImg");//加载图片
       //  Screen.fullScreen = true;
     }
 
     void Start () {
         Invoke("goNextSence", 5);
-        //NameHandler.localText("NameList.txt");
         NameHandler.localText(path + "NameList.txt");
-        Debug.Log(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
+        //Debug.Log(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
     }
 	
 	void goNextSence() {
@@ -31,7 +30,6 @@ public class RunSplash : MonoBehaviour {
         //图片名称
         string fileName = "pic.jpg";
         WWW wwwTexture = new WWW("file://"+path+fileName);
-        Debug.Log(wwwTexture.url);
         yield return wwwTexture;
         if(wwwTexture.texture != null) {
             splash.mainTexture = wwwTexture.texture;
